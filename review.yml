@@ -1,0 +1,296 @@
+aid: mcgrath
+name: McGrath
+review:
+  question: >-
+    Does McGrath publish a public, machine-readable API surface for its Australian
+    residential real estate listings, property management, or transaction data — and
+    what is its RESO posture?
+  answer: false
+  date: '2026-07-26'
+  reviewer: API Evangelist
+  homeMarket: Australia
+  tier: brokerage
+  primaryDomain: mcgrath.com.au
+
+sectorPosture:
+  resoPosture:
+    certified: false
+    summary: >-
+      No RESO presence of any kind. RESO (Real Estate Standards Organization) is a
+      North American body whose Web API and Data Dictionary certifications are driven
+      by NAR policy and enforced through MLS membership. Australia has no MLS system
+      and no RESO equivalent — the market is instead a portal duopoly (REA Group's
+      realestate.com.au and Domain) sitting over state land registries, with PEXA as
+      the electronic conveyancing rail. McGrath appears nowhere in the RESO
+      certification directory, publishes no OData service root or $metadata document,
+      and makes no reference to the RESO Universal Property Identifier (UPI).
+    webApiCertification: none
+    dataDictionaryCertification: none
+    dataDictionaryVersion: null
+    directoryEvidence: >-
+      RESO certification directory (https://certification.reso.org/ and
+      https://www.reso.org/certificates/) was consulted; certification.reso.org
+      returned no renderable content to an anonymous fetch (dynamic app shell), and
+      targeted search of the RESO certified-organization listings surfaced no McGrath
+      entry and no Australian organizations. RESO's own certification program is
+      scoped to MLSs, brokerages and vendors operating under NAR/MLS rules, which
+      structurally excludes an Australian brokerage.
+    odataEndpoints: none
+    metadataDocument: none
+    universalPropertyIdentifier: not referenced
+    honestStatement: >-
+      Not certified and not applicable — RESO is absent from the Australian market,
+      so the honest answer here is absence rather than "certified but unreachable".
+  accessGate:
+    classification: none-published
+    whatADeveloperMustSignOrJoin: >-
+      Nothing, because there is nothing to sign up for. McGrath publishes no
+      developer agreement, no data licence, no IDX/VOW-equivalent, no partner
+      programme and no API terms. There is no application form, no member portal
+      login for developers, and no sponsored-broker path. A third party wanting
+      McGrath listing data in machine-readable form must go around McGrath entirely
+      — to the portals McGrath syndicates into (REA Group / Domain, both commercial
+      partner-only APIs), to CoreLogic or PropTrack for valuation and property
+      records, or to PEXA for transaction/settlement rails (PEXA gates its developer
+      portal behind a signed PEXA API Agreement, credentials issued by
+      apisupport@pexa.com.au, authenticated with OAuth 2.0 or mutual TLS).
+    gated: true
+    gatedRationale: >-
+      Nothing McGrath operates is publicly callable. The classification is
+      none-published rather than licence-agreement or partner-only because McGrath
+      does not publish any access path at all — not even a closed one.
+  openData:
+    exists: false
+    summary: >-
+      McGrath publishes no open dataset. Australia's open-data counterweight lives
+      with government, not with brokerages — state land registries (several
+      progressively privatised), data.gov.au, and PEXA's near-mandated settlement
+      network are the machine-readable rails in this market, and none of them are
+      McGrath's to publish. McGrath's robots.txt actively works against openness: it
+      disallows /properties/ and /search/ for every user-agent and enumerates blocks
+      for GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot, AhrefsBot,
+      Applebot and AdsBot-Google.
+  authModel:
+    scheme: none published
+    detail: >-
+      No API key issuance, no OAuth 2.0 authorization server, no OpenID Connect
+      discovery document, and no SAML member-portal metadata was found on
+      mcgrath.com.au. https://www.mcgrath.com.au/.well-known/openid-configuration
+      returned HTTP 404 to an anonymous request. Agent and office logins on the site
+      are consumer/staff web sessions with no documented machine interface.
+  webhooksEventsSdksPostman:
+    webhooks: none found
+    events: none found
+    sdks: none found
+    postman: none found
+    githubOrganization: >-
+      None. GitHub organization search for "McGrath Estate Agents" returned
+      total_count 0. No public source, SDK, or spec repository exists.
+    note: >-
+      The absence is itself the finding: this is a brokerage that buys technology
+      (CRM, portal syndication, conveyancing) rather than one that ships a platform.
+  productApiFamily:
+    note: >-
+      McGrath's real product segmentation, taken from its own site, is residential
+      sales, property management/rentals, projects (new development marketing),
+      rural and livestock, Asia Desk, home loans via Oxygen Home Loans, and
+      insurance partnerships. None of these segments is expressed as an API. Listing
+      distribution runs outbound into realestate.com.au and Domain; there is no
+      documented inbound or outbound machine contract published by McGrath.
+
+findings:
+  summary: |
+    McGrath has no public API surface. Every candidate developer host and path was
+    probed and every one either failed to resolve or returned 404. The company is a
+    consumer of Australia's property rails (REA/Domain portals, PEXA conveyancing,
+    PropTrack/CoreLogic valuation), not a producer of them. RESO does not apply here
+    at all — it is a NAR/MLS-driven North American regime with no Australian analogue
+    — so the correct RESO posture is absence, not "certified but closed". apis[] in
+    apis.yml is deliberately empty and no openapi/ directory was created because no
+    real artifact was found. Recorded as built-stub: identity captured, API surface
+    genuinely nil.
+  probes:
+    dns:
+      - host: developer.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: developers.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: api.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: docs.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: feeds.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: data.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: portal.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: my.mcgrath.com.au
+        result: NXDOMAIN (no A record)
+      - host: api.mcgrathgroup.com.au
+        result: NXDOMAIN (no A record)
+      - host: developer.mcgrathgroup.com.au
+        result: NXDOMAIN (no A record)
+      - host: www.mcgrath.com.au
+        result: CNAME cname.vercel-dns.com (66.33.60.35, 76.76.21.123) — site hosted on Vercel
+      - host: mcgrath.com.au
+        result: A 76.76.21.21
+  http:
+      - url: https://www.mcgrath.com.au/
+        status: 429
+        method: curl
+        note: >-
+          Vercel Security Checkpoint interstitial is returned to all direct
+          programmatic requests regardless of user-agent. Same URL rendered
+          successfully via a browser-equivalent fetch, confirming a live marketing
+          site.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/
+        status: 200
+        method: browser-equivalent fetch
+        note: Live consumer marketing site; no developer or API references anywhere.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/robots.txt
+        status: 200
+        method: browser-equivalent fetch
+        note: >-
+          Disallows /properties/ and /search/ for User-agent *; enumerates explicit
+          blocks for GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot,
+          AhrefsBot, Applebot, AdsBot-Google and other crawlers. Declares 12
+          sitemaps covering pages, agents, articles, campaigns, media releases,
+          research, offices, projects and buy/sold/rent/leased listings. The only
+          "/api" strings present are Google Maps JS API paths, not McGrath endpoints.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/about-us
+        status: 200
+        method: browser-equivalent fetch
+        note: Company history 1988-present; confirms Knight Frank + Bayleys ownership from 2024.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/offices
+        status: 200
+        method: browser-equivalent fetch
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/contact-us
+        status: 200
+        method: browser-equivalent fetch
+        note: Web form only; no email, phone or machine contact channel published.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/developers
+        status: 404
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/api
+        status: 404
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/docs
+        status: 404
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/api-docs
+        status: 404
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/openapi.json
+        status: 404
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/swagger.json
+        status: 404
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/$metadata
+        status: 404
+        note: OData/RESO metadata probe — no EDMX document served.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrath.com.au/.well-known/openid-configuration
+        status: 404
+        note: Anonymous OIDC discovery probe — no authorization server published.
+        fetched: '2026-07-26'
+      - url: https://www.mcgrathgroup.com.au/
+        status: 200
+        method: curl
+        note: >-
+          Separate McGrath-branded host (A 20.53.139.220), distinct from the
+          mcgrath.com.au network site. No developer or api subdomains resolve under
+          it either.
+        fetched: '2026-07-26'
+      - url: https://certification.reso.org/
+        status: 200
+        method: browser-equivalent fetch
+        note: >-
+          Returned an empty/dynamic shell to anonymous retrieval; no McGrath entry
+          recoverable. Cross-checked against https://www.reso.org/certificates/.
+        fetched: '2026-07-26'
+  marketContext: |
+    Australia's machine-readable property surface is concentrated away from
+    brokerages. Listings distribution is a duopoly of REA Group's
+    realestate.com.au and Domain (developer.domain.com.au), both commercial
+    partner-gated. Valuation and property records concentrate in PropTrack
+    (REA-owned) and CoreLogic. PEXA is the electronic conveyancing network that
+    settles the large majority of Australian property transactions and is
+    effectively mandated in most states — the closest thing in this study to a
+    required national machine-readable property rail — and it gates its developer
+    portal behind a signed PEXA API Agreement with OAuth 2.0 or mutual TLS
+    authentication. A brokerage like McGrath is a customer of all three layers.
+  corporateFacts:
+    founded: 1988 (as McGrath Goodhope Realty; McGrath Partners 1991; McGrath 2000)
+    founder: John McGrath
+    headquarters: Pyrmont, Sydney, New South Wales, Australia
+    network: approximately 118 offices across NSW, QLD, ACT, VIC and TAS (mixed company-owned and franchise)
+    listedASX: 2015 as McGrath Limited (ASX:MEA)
+    acquired: >-
+      June 2024 by a Knight Frank Australia and Bayleys (New Zealand) consortium for
+      A$95.5m (60c/share); scheme effective 17 June 2024, implemented 27 June 2024,
+      delisted from the ASX 28 June 2024.
+    businessLines:
+      - Residential sales
+      - Property management and rentals
+      - Projects / new development marketing
+      - Rural and livestock
+      - Asia Desk (offshore buyers)
+      - Home loans (Oxygen Home Loans)
+      - Insurance partnerships
+
+sources:
+  - url: https://www.mcgrath.com.au/
+    type: Website
+    note: Company homepage; no developer, API, or data-feed references.
+  - url: https://www.mcgrath.com.au/about-us
+    type: About
+    note: Founding year, milestone timeline, Knight Frank + Bayleys acquisition.
+  - url: https://www.mcgrath.com.au/robots.txt
+    type: Robots
+    note: Disallows /properties/ and /search/ to all crawlers; blocks named AI crawlers.
+  - url: https://certification.reso.org/
+    type: Certification
+    note: RESO certification directory — no McGrath entry, no Australian organizations.
+  - url: https://www.reso.org/certificates/
+    type: Certification
+    note: RESO certification status listing cross-check.
+  - url: https://www.reso.org/reso-web-api/
+    type: Standard
+    note: RESO Web API definition; scope is NAR/MLS-affiliated North American systems.
+  - url: https://developer.domain.com.au/
+    type: MarketContext
+    note: Domain Group developer portal — the Australian portal-side API surface McGrath syndicates into.
+  - url: https://www.pexa.com.au/pexa-apis/
+    type: MarketContext
+    note: PEXA API programme; developer portal access requires a signed PEXA API Agreement.
+  - url: https://www.pexa.com.au/pexa-apis-terms-and-conditions/
+    type: MarketContext
+    note: PEXA API Development and Testing Terms and Conditions.
+  - url: https://www.therealestateconversation.com.au/2024/03/25/knight-frank-and-bayleys-agree-acquire-100-mcgrath-limited/1711317677
+    type: News
+    note: Knight Frank and Bayleys agree to acquire 100% of McGrath Limited.
+  - url: https://www.delisted.com.au/company/mcgrath-limited/
+    type: News
+    note: McGrath Limited (ASX:MEA) delisted 28 June 2024.
+  - url: https://au.linkedin.com/company/mcgrath-estate-agents
+    type: LinkedIn
+
+actions:
+  apisYmlCreated: true
+  apisListed: 0
+  apisEmptyReason: >-
+    No real, documented, publicly reachable McGrath API exists. Per the no-fabrication
+    rule, apis[] is left empty rather than populated with an inferred or internal
+    endpoint.
+  openapiHarvested: false
+  specsCount: 0
+  openapiDirectoryCreated: false
+  status: built-stub

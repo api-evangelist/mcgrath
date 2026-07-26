@@ -1,0 +1,79 @@
+aid: mcgrath
+url: https://raw.githubusercontent.com/api-evangelist/mcgrath/refs/heads/main/apis.yml
+name: McGrath
+kind: company
+description: >-
+  McGrath is one of Australia's largest residential real estate brokerage
+  networks, founded in Sydney in 1988 by John McGrath and operating a mixed
+  company-owned and franchise network of roughly 118 offices across New South
+  Wales, Queensland, the ACT, Victoria and Tasmania. Its business lines span
+  residential sales, property management and rentals, projects and new-development
+  marketing, rural and livestock, an Asia Desk for offshore buyers, and mortgage
+  broking through Oxygen Home Loans. Listed on the ASX in 2015 as McGrath Limited
+  (ASX:MEA), it was acquired in June 2024 by a consortium of Knight Frank Australia
+  and New Zealand's Bayleys for A$95.5m and delisted from the ASX on 28 June 2024.
+  McGrath sits on the demand side of the Australian property value chain: it is a
+  brokerage that publishes listings into the REA Group (realestate.com.au) and
+  Domain portal duopoly, settles transactions over the PEXA electronic conveyancing
+  network, and consumes valuation data from PropTrack and CoreLogic rather than
+  producing any of those rails itself. Its API posture is honestly nil. No
+  developer portal exists — developer., developers., api., docs., feeds., data. and
+  portal. subdomains of mcgrath.com.au all fail to resolve (NXDOMAIN), and
+  /developers, /api, /docs, /api-docs, /openapi.json, /swagger.json, /$metadata and
+  /.well-known/openid-configuration all return HTTP 404. RESO — the only genuinely
+  mandated machine-readable real estate contract anywhere in this study — is a North
+  American standard driven by NAR and MLS membership; it has no Australian
+  counterpart and McGrath has no RESO Web API or Data Dictionary certification, no
+  OData surface, and no Universal Property Identifier usage. McGrath's own
+  mcgrath.com.au robots.txt explicitly disallows /properties/ and /search/ to every
+  crawler including GPTBot, ClaudeBot, OAI-SearchBot and PerplexityBot, which is the
+  clearest available statement of intent: the listing inventory is a marketing asset
+  routed to portals under commercial agreements, not a developer surface.
+accessModel:
+  pricing: none
+  onboarding: none-published
+  trial: false
+  try_now: false
+  public: false
+  label: No published API · No developer onboarding
+  confidence: high
+  source:
+  - probe
+  generated: '2026-07-26'
+  method: manual
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groq.png
+tags:
+- Real Estate
+- Australia
+- Property Listings
+- Brokerage
+- Residential Real Estate
+- Property Management
+- Rentals
+- Mortgage
+created: '2026-07-26'
+modified: '2026-07-26'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.mcgrath.com.au/
+- type: About
+  url: https://www.mcgrath.com.au/about-us
+- type: Contact
+  url: https://www.mcgrath.com.au/contact-us
+- type: Offices
+  url: https://www.mcgrath.com.au/offices
+- type: Agents
+  url: https://www.mcgrath.com.au/agents
+- type: Careers
+  url: https://www.mcgrath.com.au/join-us
+- type: LinkedIn
+  url: https://au.linkedin.com/company/mcgrath-estate-agents
+- type: Facebook
+  url: https://www.facebook.com/McGrathEstateAgents/
+- type: Robots
+  url: https://www.mcgrath.com.au/robots.txt
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
