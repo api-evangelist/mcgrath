@@ -66,10 +66,19 @@ sectorPosture:
       with government, not with brokerages — state land registries (several
       progressively privatised), data.gov.au, and PEXA's near-mandated settlement
       network are the machine-readable rails in this market, and none of them are
-      McGrath's to publish. McGrath's robots.txt actively works against openness: it
-      disallows /properties/ and /search/ for every user-agent and enumerates blocks
-      for GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot, AhrefsBot,
-      Applebot and AdsBot-Google.
+      McGrath's to publish. McGrath's robots.txt works against openness, though not
+      in the way its shape first suggests: the /properties/ and /search/ disallows
+      sit only under User-agent: *, while the twenty named groups — GPTBot,
+      ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot,
+      Bytespider, AhrefsBot, Applebot, AdsBot-Google and others — disallow nothing
+      but Google Maps JS/RPC paths. Under RFC 9309 a crawler obeys only its own most
+      specific group, so the named AI agents are nominally free to crawl the listing
+      corpus that generic crawlers are blocked from, and the twelve sitemaps
+      advertise those listing URLs to anyone. The effective gate is not robots.txt
+      at all but the Vercel Security Checkpoint fronting www.mcgrath.com.au, which
+      answers scripted clients with HTTP 429 and a browser challenge on every path.
+      Corrected 2026-07-26 in the second enrichment round; see
+      well-known/mcgrath-well-known.yml for the captured file and the full reading.
   authModel:
     scheme: none published
     detail: >-
@@ -255,7 +264,11 @@ sources:
     note: Founding year, milestone timeline, Knight Frank + Bayleys acquisition.
   - url: https://www.mcgrath.com.au/robots.txt
     type: Robots
-    note: Disallows /properties/ and /search/ to all crawlers; blocks named AI crawlers.
+    note: >-
+      Disallows /properties/ and /search/ under User-agent: * only; the named AI
+      crawler groups (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, CCBot,
+      Google-Extended, Bytespider) disallow only Google Maps JS/RPC paths, so under
+      RFC 9309 they are not blocked from listings. Declares 12 sitemaps.
   - url: https://certification.reso.org/
     type: Certification
     note: RESO certification directory — no McGrath entry, no Australian organizations.

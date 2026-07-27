@@ -24,11 +24,22 @@ description: >-
   mandated machine-readable real estate contract anywhere in this study — is a North
   American standard driven by NAR and MLS membership; it has no Australian
   counterpart and McGrath has no RESO Web API or Data Dictionary certification, no
-  OData surface, and no Universal Property Identifier usage. McGrath's own
-  mcgrath.com.au robots.txt explicitly disallows /properties/ and /search/ to every
-  crawler including GPTBot, ClaudeBot, OAI-SearchBot and PerplexityBot, which is the
-  clearest available statement of intent: the listing inventory is a marketing asset
-  routed to portals under commercial agreements, not a developer surface.
+  OData surface, and no Universal Property Identifier usage. The only
+  interoperability standards McGrath demonstrably implements are robots.txt and
+  twelve XML sitemaps; every /.well-known/ document probed — security.txt,
+  openid-configuration, oauth-authorization-server, api-catalog, ai-plugin.json —
+  and /llms.txt return 404. Its robots.txt enumerates twenty crawler groups
+  including GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot,
+  Google-Extended, CCBot and Bytespider, but under RFC 9309 group-matching rules
+  those named AI agents are disallowed only from Google Maps JS/RPC paths — the
+  /properties/ and /search/ disallow lands solely on User-agent: *, so the listing
+  corpus is nominally open to the named AI crawlers and closed to generic ones,
+  while the properties-buy/sold/rent/leased sitemaps advertise those same URLs.
+  Reachability is the harder gate: www.mcgrath.com.au sits behind a Vercel Security
+  Checkpoint that answers scripted clients with HTTP 429 and a browser challenge on
+  every path, so no unattended agent can read the site regardless of robots.txt.
+  The listing inventory is a marketing asset routed to portals under commercial
+  agreements, not a developer surface.
 accessModel:
   pricing: none
   onboarding: none-published
@@ -56,6 +67,12 @@ modified: '2026-07-26'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/mcgrath-domain-security.yml
+- type: Conformance
+  url: conformance/mcgrath-conformance.yml
+- type: LLMsTxt
+  url: llms/mcgrath-llms.txt
 - type: Website
   url: https://www.mcgrath.com.au/
 - type: About
@@ -74,6 +91,20 @@ common:
   url: https://www.facebook.com/McGrathEstateAgents/
 - type: Robots
   url: https://www.mcgrath.com.au/robots.txt
+- type: Blog
+  url: https://www.mcgrath.com.au/articles
+- type: Research
+  url: https://www.mcgrath.com.au/mcgrath-report
+- type: PrivacyPolicy
+  url: https://www.mcgrath.com.au/privacy
+- type: TermsOfService
+  url: https://www.mcgrath.com.au/terms
+- type: Sitemap
+  url: https://www.mcgrath.com.au/sitemap/general.xml
+- type: X
+  url: https://x.com/mcgrathestate
+- type: Instagram
+  url: https://www.instagram.com/mcgrathestateagents/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

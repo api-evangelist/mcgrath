@@ -1,0 +1,83 @@
+generated: '2026-07-26'
+method: derived
+source: review.yml + live probes (well-known/mcgrath-well-known.yml, security/mcgrath-domain-security.yml)
+summary: >-
+  McGrath conforms to no API or data-interchange standard, because it operates no
+  public API. This file records the negative assertions explicitly so the sector
+  spine — above all the RESO question that anchors the residential real estate
+  study — is machine-readable rather than only narrative. Nothing here is a
+  criticism of a missing implementation; for an Australian brokerage most of these
+  standards have no local applicability at all (see notes).
+standards:
+- id: reso-web-api
+  conforms: false
+  evidence: >-
+    No RESO Web API service root, no OData $metadata document, no entry in the
+    RESO certification directory. RESO certification is scoped to NAR/MLS-governed
+    North American organisations; Australia has no MLS and no RESO equivalent, so
+    absence here is structural, not a lapse.
+- id: reso-data-dictionary
+  conforms: false
+  evidence: No Data Dictionary certification and no Data Dictionary field usage anywhere on the public site.
+- id: reso-upi
+  conforms: false
+  evidence: Universal Property Identifier is never referenced; Australian equivalents (state land-registry lot/plan identifiers) are used in listing copy only.
+- id: odata-v4
+  conforms: false
+  evidence: /$metadata returns 404; no OData service document exists.
+- id: openapi
+  conforms: false
+  evidence: /openapi.json, /swagger.json, /api-docs all 404; no spec published anywhere.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is published.
+- id: oauth2
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server 404; no developer-facing authorization server exists.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration 404.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No API, therefore no error envelope to assess.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt 404 on both www and apex.
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: /.well-known/api-catalog 404.
+- id: rfc9309-robots
+  conforms: true
+  evidence: >-
+    well-known/mcgrath-robots.txt — a syntactically valid robots.txt with per-agent
+    groups and twelve Sitemap declarations. This is the only interoperability
+    standard McGrath demonstrably implements.
+- id: sitemaps-xml
+  conforms: true
+  evidence: Twelve sitemap XML documents declared in robots.txt, segmented by content type including four property-listing sitemaps.
+- id: llmstxt
+  conforms: false
+  evidence: /llms.txt 404.
+- id: dmarc
+  conforms: true
+  evidence: security/mcgrath-domain-security.yml — DMARC published with policy p=reject.
+- id: spf
+  conforms: true
+  evidence: security/mcgrath-domain-security.yml — SPF record published.
+- id: dnssec
+  conforms: false
+  evidence: security/mcgrath-domain-security.yml — mcgrath.com.au is not DNSSEC signed.
+- id: caa
+  conforms: false
+  evidence: security/mcgrath-domain-security.yml — no CAA records published.
+- id: hsts
+  conforms: false
+  evidence: security/mcgrath-domain-security.yml — no Strict-Transport-Security header observed on www.mcgrath.com.au (TLS 1.3 is served).
+compliance_program_published: false
+compliance_note: >-
+  No Compliance pointer is emitted: McGrath publishes no trust centre, no SOC 2 /
+  ISO 27001 / PCI attestation and no security certification page. Its only public
+  compliance statement is the Privacy Policy, which asserts obligations under the
+  Australian Privacy Act 1988 (Cth), the Australian Privacy Principles and the
+  Privacy (Credit Reporting) Code 2014 — a legal-obligation statement, not a
+  certified compliance program.

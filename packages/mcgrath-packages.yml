@@ -1,0 +1,22 @@
+generated: '2026-07-26'
+method: searched
+source: registry searches (npm, PyPI, GitHub) + mcgrath.com.au
+packages: []
+official_count: 0
+note: >-
+  No first-party McGrath client library exists in any public package registry, as
+  expected for a provider with no API. Recorded so later enrichment rounds do not
+  re-probe. The npm hits for the string "mcgrath" are unrelated (personal packages
+  by developers named McGrath, plus book-download spam); there is no @mcgrath or
+  mcgrath-* scope owned by the brokerage.
+registries_probed:
+- registry: npm
+  query: mcgrath
+  result: no first-party package
+- registry: pypi
+  query: mcgrath
+  result: 404 — no project
+- registry: github
+  query: github.com/mcgrath, github.com/mcgrathestateagents
+  result: 404 — no GitHub organisation
+sdks_published: false

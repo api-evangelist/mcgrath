@@ -1,0 +1,182 @@
+User-Agent: AdsBot-Google
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: AhrefsBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: AhrefsSiteAudit
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Applebot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: GPTBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: ChatGPT-User
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: OAI-SearchBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: ClaudeBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: PerplexityBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Google-Extended
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: CCBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Baiduspider
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: 360Spider
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Yisouspider
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: PetalBot
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Bytespider
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Sogou web spider
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Sogou inst spider
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Baiduspider-render
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: Google-HotelAdsVerifier
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+User-Agent: *
+Disallow: /properties/
+Disallow: /search/
+Disallow: /maps/api/js/
+Disallow: /maps/api/place/js/
+Disallow: /maps/api/staticmap
+Disallow: /maps/api/streetview
+Disallow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+Disallow: /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+
+Sitemap: https://www.mcgrath.com.au/sitemap/general.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/agents.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/articles.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/campaigns.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/media-releases.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/research.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/offices.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/projects.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/properties-buy.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/properties-sold.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/properties-rent.xml
+Sitemap: https://www.mcgrath.com.au/sitemap/properties-leased.xml

@@ -1,0 +1,98 @@
+generated: '2026-07-26'
+method: searched
+source: live probes of https://www.mcgrath.com.au
+host: https://www.mcgrath.com.au
+note: >-
+  Every RFC-defined /.well-known/ discovery document returns 404 on the McGrath
+  web property. There is no API host to probe: apis.yml carries no apis[] entries
+  and the api., apis., developer., developers., docs., feeds., data. and portal.
+  subdomains of mcgrath.com.au do not resolve (NXDOMAIN, recorded in review.yml).
+  The only machine-readable surfaces McGrath publishes are robots.txt and the
+  twelve XML sitemaps it advertises — both captured here.
+probe_note: >-
+  www.mcgrath.com.au sits behind a Vercel Security Checkpoint that answers plain
+  HTTP clients (curl, scripted fetchers) with HTTP 429 and an HTML challenge page
+  for EVERY path, including /robots.txt and the site root. Statuses below were
+  therefore established with a browser-equivalent rendering fetch, which receives
+  the real origin status. This challenge is itself an agent-readiness fact: no
+  unattended client can read anything on this domain, machine-readable or not.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /llms.txt
+  status: 404
+found: 0
+other_machine_readable:
+- path: /robots.txt
+  status: 200
+  file: mcgrath-robots.txt
+  format: RFC 9309 robots.txt
+sitemaps:
+- https://www.mcgrath.com.au/sitemap/general.xml
+- https://www.mcgrath.com.au/sitemap/agents.xml
+- https://www.mcgrath.com.au/sitemap/articles.xml
+- https://www.mcgrath.com.au/sitemap/campaigns.xml
+- https://www.mcgrath.com.au/sitemap/media-releases.xml
+- https://www.mcgrath.com.au/sitemap/research.xml
+- https://www.mcgrath.com.au/sitemap/offices.xml
+- https://www.mcgrath.com.au/sitemap/projects.xml
+- https://www.mcgrath.com.au/sitemap/properties-buy.xml
+- https://www.mcgrath.com.au/sitemap/properties-sold.xml
+- https://www.mcgrath.com.au/sitemap/properties-rent.xml
+- https://www.mcgrath.com.au/sitemap/properties-leased.xml
+ai_crawler_posture:
+  source: well-known/mcgrath-robots.txt
+  named_ai_agents:
+  - GPTBot
+  - ChatGPT-User
+  - OAI-SearchBot
+  - ClaudeBot
+  - PerplexityBot
+  - Google-Extended
+  - CCBot
+  - Bytespider
+  - Applebot
+  ai_agents_disallowed_paths:
+  - /maps/api/js/
+  - /maps/api/place/js/
+  - /maps/api/staticmap
+  - /maps/api/streetview
+  - /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+  - /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+  wildcard_disallowed_paths:
+  - /properties/
+  - /search/
+  - /maps/api/js/
+  - /maps/api/place/js/
+  - /maps/api/staticmap
+  - /maps/api/streetview
+  - /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+  - /%24rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/
+  reading: >-
+    Read strictly under RFC 9309 group-matching rules — a crawler obeys only the
+    most specific group that names it, and ignores User-agent: * once its own
+    group exists — the named AI crawlers are NOT blocked from /properties/ or
+    /search/. Their groups disallow only Google Maps JS/RPC paths, which is
+    boilerplate carried over from Google's own Maps robots directives and has
+    nothing to do with listing inventory. The /properties/ and /search/ block
+    lands solely on User-agent: *, i.e. on generic and unnamed crawlers. The
+    practical effect is the inverse of the intent one would assume from seeing
+    twenty AI user-agents enumerated: the listing corpus is crawlable by the
+    named AI agents and closed to everyone else, while the twelve sitemaps
+    (including properties-buy / properties-sold / properties-rent /
+    properties-leased) advertise those same listing URLs to any client. This
+    corrects the earlier round's reading, which treated the AI-agent groups as
+    inheriting the /properties/ and /search/ disallows.
+  caveat: >-
+    Crawlability under robots.txt is not the same as reachability. The Vercel
+    Security Checkpoint above 429s scripted clients regardless of robots.txt, so
+    an AI agent that respects robots.txt still cannot fetch a listing page
+    without executing the browser challenge.
