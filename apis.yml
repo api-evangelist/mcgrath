@@ -40,6 +40,17 @@ description: >-
   every path, so no unattended agent can read the site regardless of robots.txt.
   The listing inventory is a marketing asset routed to portals under commercial
   agreements, not a developer surface.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: none
   onboarding: none-published
