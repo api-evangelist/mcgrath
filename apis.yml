@@ -71,7 +71,7 @@ imageNote: >-
   No correct icon has been sourced yet. Shipping the wrong company's mark is worse
   than shipping none; re-run the icon backfill once a real asset exists.
 tags:
-- Real-Estate
+- Real Estate
 - Australia
 - Property Listings
 - Brokerage
@@ -88,6 +88,7 @@ tags_raw:
 - Property Management
 - Rentals
 - Mortgage
+- Real-Estate
 created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.23'
