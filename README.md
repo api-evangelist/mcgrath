@@ -1,4 +1,4 @@
-# McGrath (mcgrath)
+# McGrath
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,88 +64,82 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-McGrath is one of Australia's largest residential real estate brokerage networks, founded in Sydney in 1988 by John McGrath and operating a mixed company-owned and franchise network of roughly 118 offices across New South Wales, Queensland, the ACT, Victoria and Tasmania. Its business lines span residential sales, property management and rentals, projects and new-development marketing, rural and livestock, an Asia Desk for offshore buyers, and mortgage broking through Oxygen Home Loans. Listed on the ASX in 2015 as McGrath Limited (ASX:MEA), it was acquired in June 2024 by a consortium of Knight Frank Australia and New Zealand's Bayleys for A$95.5m and delisted from the ASX on 28 June 2024. McGrath sits on the demand side of the Australian property value chain: it is a brokerage that publishes listings into the REA Group (realestate.com.au) and Domain portal duopoly, settles transactions over the PEXA electronic conveyancing network, and consumes valuation data from PropTrack and CoreLogic rather than producing any of those rails itself. Its API posture is honestly nil.
+McGrath is one of Australia's largest residential real estate brokerage networks, founded in Sydney in 1988 by John McGrath and operating a mixed company-owned and franchise network of roughly 118 offices across New South Wales, Queensland, the ACT, Victoria and Tasmania. Its business lines span residential sales, property management and rentals, projects and new-development marketing, rural and livestock, an Asia Desk for offshore buyers, and mortgage broking through Oxygen Home Loans. Listed on the ASX in 2015 as McGrath Limited (ASX:MEA), it was acquired in June 2024 by a consortium of Knight Frank Australia and New Zealand's Bayleys for A$95.5m and delisted from the ASX on 28 June 2024. McGrath sits on the demand side of the Australian property value chain: it is a brokerage that publishes listings into the REA Group (realestate.com.au) and Domain portal duopoly, settles transactions over the PEXA electronic conveyancing network, and consumes valuation data from PropTrack and CoreLogic rather than producing any of those rails itself. Its API posture is honestly nil. No developer portal exists — developer., developers., api., docs., feeds., data. and portal. subdomains of mcgrath.com.au all fail to resolve (NXDOMAIN), and /developers, /api, /docs, /api-docs, /openapi.json, /swagger.json, /$metadata and /.well-known/openid-configuration all return HTTP 404. RESO — the only genuinely mandated machine-readable real estate contract anywhere in this study — is a North American standard driven by NAR and MLS membership; it has no Australian counterpart and McGrath has no RESO Web API or Data Dictionary certification, no OData surface, and no Universal Property Identifier usage. The only interoperability standards McGrath demonstrably implements are robots.txt and twelve XML sitemaps; every /.well-known/ document probed — security.txt, openid-configuration, oauth-authorization-server, api-catalog, ai-plugin.json — and /llms.txt return 404. Its robots.txt enumerates twenty crawler groups including GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot and Bytespider, but under RFC 9309 group-matching rules those named AI agents are disallowed only from Google Maps JS/RPC paths — the /properties/ and /search/ disallow lands solely on User-agent: *, so the listing corpus is nominally open to the named AI crawlers and closed to generic ones, while the properties-buy/sold/rent/leased sitemaps advertise those same URLs. Reachability is the harder gate: www.mcgrath.com.au sits behind a Vercel Security Checkpoint that answers scripted clients with HTTP 429 and a browser challenge on every path, so no unattended agent can read the site regardless of robots.txt. The listing inventory is a marketing asset routed to portals under commercial agreements, not a developer surface.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/mcgrath/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/mcgrath/refs/heads/main/apis.yml)
+**Areas:** Real Estate · Australia · Property Listings · Brokerage · Residential Real Estate · Property Management · Rentals · Mortgage
 
-## Tags
+## McGrath on APIs.io
 
-- Real Estate
-- Australia
-- Property Listings
-- Brokerage
-- Residential Real Estate
-- Property Management
-- Rentals
-- Mortgage
+Everything profiled for McGrath is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mcgrath/](https://apis.io/providers/mcgrath/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-26
-- **Modified:** 2026-07-26
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (1)
 
-None. No public, documented McGrath API was found. `apis[]` in `apis.yml` is deliberately empty.
+Authentication, trust centre, and vulnerability disclosure.
 
-## API Posture
+- [Mcgrath Domain Security](https://apis.io/security/mcgrath/mcgrath-domain-security/)
 
-### RESO
+## Where to find this API
 
-No RESO presence of any kind. RESO — the Real Estate Standards Organization — is a North American body whose Web API and Data Dictionary certifications are driven by NAR policy and enforced through MLS membership. Australia has no MLS system and no RESO equivalent. McGrath appears nowhere in the RESO certification directory, publishes no OData service root or `$metadata` document, and makes no reference to the RESO Universal Property Identifier (UPI). The honest posture here is **absence**, not "certified but unreachable".
-
-### Access gate
-
-`none-published`. There is no developer agreement, data licence, IDX/VOW equivalent, partner programme or API terms to sign, and no MLS, board or association to join — because no access path of any kind is published. A third party wanting Australian listing or transaction data in machine-readable form goes around McGrath entirely: to REA Group or Domain for listings, PropTrack or CoreLogic for valuation, and PEXA for settlement (PEXA gates its developer portal behind a signed PEXA API Agreement, with OAuth 2.0 or mutual TLS).
-
-### Open data
-
-None. McGrath publishes no open dataset. Its `robots.txt` disallows `/properties/` and `/search/` for every user-agent and explicitly blocks GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot and others — the clearest available statement that the listing inventory is a marketing asset routed to portals under commercial agreements, not a developer surface.
-
-### Auth model
-
-None published. No API keys, no OAuth 2.0 authorization server, no OpenID Connect discovery document (`/.well-known/openid-configuration` returns HTTP 404), and no SAML member-portal metadata.
-
-### Webhooks, events, SDKs, Postman
-
-None found. No public GitHub organization exists. The absence is itself the finding: McGrath buys technology (CRM, portal syndication, conveyancing) rather than shipping a platform.
-
-## Probes
-
-Every candidate developer host and path was probed on 2026-07-26.
-
-| Target | Result |
-| --- | --- |
-| `developer.mcgrath.com.au` | NXDOMAIN |
-| `developers.mcgrath.com.au` | NXDOMAIN |
-| `api.mcgrath.com.au` | NXDOMAIN |
-| `docs.mcgrath.com.au` | NXDOMAIN |
-| `feeds.` / `data.` / `portal.` / `my.mcgrath.com.au` | NXDOMAIN |
-| `https://www.mcgrath.com.au/` | 200 (429 Vercel Security Checkpoint to direct programmatic requests) |
-| `https://www.mcgrath.com.au/robots.txt` | 200 |
-| `https://www.mcgrath.com.au/developers` | 404 |
-| `https://www.mcgrath.com.au/api` | 404 |
-| `https://www.mcgrath.com.au/docs` | 404 |
-| `https://www.mcgrath.com.au/api-docs` | 404 |
-| `https://www.mcgrath.com.au/openapi.json` | 404 |
-| `https://www.mcgrath.com.au/swagger.json` | 404 |
-| `https://www.mcgrath.com.au/$metadata` | 404 |
-| `https://www.mcgrath.com.au/.well-known/openid-configuration` | 404 |
-
-Full provenance, including HTTP status and fetch date for every URL, is recorded in [review.yml](review.yml).
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.mcgrath.com.au/)
-- [About](https://www.mcgrath.com.au/about-us)
-- [Contact](https://www.mcgrath.com.au/contact-us)
-- [Offices](https://www.mcgrath.com.au/offices)
-- [Agents](https://www.mcgrath.com.au/agents)
-- [Careers](https://www.mcgrath.com.au/join-us)
-- [LinkedIn](https://au.linkedin.com/company/mcgrath-estate-agents)
-- [Facebook](https://www.facebook.com/McGrathEstateAgents/)
-- [Robots](https://www.mcgrath.com.au/robots.txt)
+- [Blog](https://www.mcgrath.com.au/articles)
+- [Terms of service](https://www.mcgrath.com.au/terms)
+- [Privacy policy](https://www.mcgrath.com.au/privacy)
 
-## Maintainers
+## API Evangelist rating
 
-- Kin Lane — kin@apievangelist.com
+**Kin Score 6.3** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 44.6 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 1.2 |
+| Access clarity | 10.5 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.9** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mcgrath/](https://apis.io/providers/mcgrath/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for McGrath: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mcgrath/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
